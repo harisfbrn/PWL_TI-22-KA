@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Chat App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="sidebar">
+      <div class="user-header">Febry D Fairuz<br><small>4560255</small></div>
+      <input type="text" class="search" placeholder="Search here" />
+      <ul class="contacts">
+        <li class="active">Septian Cahyadi<br><small>321654789</small></li>
+        <li>Jemi Arieswanto<br><small>123456</small></li>
+        <li>Edi Kaprodi TI<br><small>987654</small></li>
+        <li>Isnan Master MTK<br><small>456132</small></li>
+        <li>Anton Sekprodi TI<br><small>321456</small></li>
+        <li>Rizky Aditya<br><small>789123</small></li>
+      </ul>
+    </div>
+    <div class="chat-section">
+      <div class="chat-header">Chats with Septian Cahyadi</div>
+      <div class="chat-body" id="chat-body"></div>
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button onclick="sendMessage()">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const API = 'http://localhost:3000/chats';
+
+    function loadChats() {
+      fetch(API)
+        .then(res => res.json())
+        .then(data => {
+          const chatBody = document.getElementById('chat-body');
+          chatBody.innerHTML = '';
+          data.forEach(chat => {
+            const bubble = document.createElement('div');
+            bubble.className = `bubble ${chat.sender === 'me' ? 'me' : 'other'}`;
+            bubble.innerHTML = `
+              <div class="text">${chat.text}</div>
+              <div class="time">${chat.time}</div>
+              ${chat.sender === 'me' ? `
+              <div class="menu">
+                <button class="menu-btn">⋮</button>
+                <div class="dropdown">
+                  <div onclick="editChat(${chat.id}, '${chat.text}')">Edit</div>
+                  <div onclick="deleteChat(${chat.id})">Remove</div>
+                </div>
+              </div>` : ''}
+            `;
+            chatBody.appendChild(bubble);
+          });
+
+          document.querySelectorAll('.menu-btn').forEach(btn => {
+            btn.onclick = function () {
+              this.nextElementSibling.classList.toggle('show');
+            };
+          });
+        });
+    }
+
+    function sendMessage() {
+      const text = document.getElementById('messageInput').value;
+      const time = new Date().toLocaleTimeString().slice(0, 5);
+      if (!text) return;
+
+      fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text, time, sender: 'me' })
+      }).then(() => {
+        document.getElementById('messageInput').value = '';
+        loadChats();
+      });
+    }
+
+    function editChat(id, oldText) {
+      const newText = prompt("Edit message:", oldText);
+      if (newText) {
+        fetch(`${API}/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: newText })
+        }).then(loadChats);
+      }
+    }
+
+    function deleteChat(id) {
+      if (confirm("Delete this message?")) {
+        fetch(`${API}/${id}`, {
+          method: 'DELETE'
+        }).then(loadChats);
+      }
+    }
+
+    loadChats();
+  </script>
+</body>
+</html>

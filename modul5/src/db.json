@@ -1,0 +1,23 @@
+{
+    "chats": [
+      {
+        "id": 1,
+        "sender": "other",
+        "text": "good morning",
+        "time": "11:19"
+      },
+      {
+        "id": 2,
+        "sender": "other",
+        "text": "how's your day ?",
+        "time": "11:21"
+      },
+      {
+        "id": 3,
+        "sender": "me",
+        "text": "i’m so starving, life like in hell",
+        "time": "11:23"
+      }
+    ]
+  }
+  

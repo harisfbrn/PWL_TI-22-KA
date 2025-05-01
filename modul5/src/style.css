@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+  }
+  
+  .app-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 280px;
+    background: #ffffff;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .user-header {
+    font-weight: bold;
+    padding: 10px 0;
+  }
+  
+  .search {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+  }
+  
+  .contacts {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contacts li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .contacts li.active {
+    background: #e3f2fd;
+    font-weight: bold;
+  }
+  
+  .chat-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-header {
+    padding: 15px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+  }
+  
+  .chat-body {
+    flex: 1;
+    padding: 15px;
+    background: #eaf5ff;
+    overflow-y: auto;
+  }
+  
+  .bubble {
+    max-width: 60%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    position: relative;
+    word-wrap: break-word;
+    background: #ccc;
+    clear: both;
+  }
+  
+  .bubble.me {
+    background: #a49edb;
+    color: white;
+    margin-left: auto;
+  }
+  
+  .bubble.other {
+    background: #ffffff;
+    margin-right: auto;
+  }
+  
+  .time {
+    font-size: 11px;
+    color: #333;
+    text-align: right;
+    margin-top: 5px;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  
+  .menu-btn {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 999;
+  }
+  
+  .dropdown div {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown div:hover {
+    background: #eee;
+  }
+  
+  .dropdown.show {
+    display: block;
+  }
+  
+  .chat-input {
+    padding: 10px;
+    background: #fff;
+    display: flex;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+  }
+  
+  .chat-input button {
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    background: #00c853;
+    color: white;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .dropdown div {
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .dropdown div:hover {
+    background: #eee;
+  }
+  
+  .dropdown div:first-child {
+    color: #1e88e5; /* Biru untuk Edit */
+  }
+  
+  .dropdown div:last-child {
+    color: #e53935; /* Merah untuk Remove */
+  }
+
+  
+  
+  
