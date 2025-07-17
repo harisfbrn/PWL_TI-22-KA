@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css" />
+    
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <button class="menu-btn">☰</button>
+                <input type="text" class="search-box" placeholder="Search">
+                <button class="search-btn">🔍</button>
+                <button class="more-btn">⋮</button>
+            </div>
+
+            <div class="chat-list">
+                <div class="chat-item">
+                    <div class="chat-avatar">B</div>
+                    <div class="chat-info">
+                        <div class="chat-name">
+                            Bayu BRIIT
+                            <span class="online-indicator"></span>
+                        </div>
+                        <div class="chat-preview">Siapp aman sajo bay</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">Tue</div>
+                    </div>
+                </div>
+
+                <div class="chat-item">
+                    <div class="chat-avatar">I</div>
+                    <div class="chat-info">
+                        <div class="chat-name">Indra Pure</div>
+                        <div class="chat-preview">siapp bor, aman nya</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">Tue</div>
+                        <div class="unread-count">1</div>
+                    </div>
+                </div>
+
+                <div class="chat-item active">
+                    <div class="chat-avatar">AN</div>
+                    <div class="chat-info">
+                        <div class="chat-name">Agung Nugraha</div>
+                        <div class="chat-preview">Hmmm</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">Sat</div>
+                    </div>
+                </div>
+
+                <div class="chat-item">
+                    <div class="chat-avatar work">⚙</div>
+                    <div class="chat-info">
+                        <div class="chat-name">(bit.) Internal OPS Team</div>
+                        <div class="chat-preview">OPT HPE271 & Storage X...</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">Sat</div>
+                        <div class="unread-count">2</div>
+                    </div>
+                </div>
+
+                <div class="chat-item">
+                    <div class="chat-avatar">S</div>
+                    <div class="chat-info">
+                        <div class="chat-name">Syahrul BIT</div>
+                        <div class="chat-preview">Log nya pake yg mana mang ...</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">Sat</div>
+                    </div>
+                </div>
+
+                <div class="chat-item">
+                    <div class="chat-avatar group">👥</div>
+                    <div class="chat-info">
+                        <div class="chat-name">FPK BIT 23-24 Mei 2025</div>
+                        <div class="chat-preview">AhdA: masama Mbake 🔥</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">Jun 3</div>
+                        <div class="unread-count">2</div>
+                    </div>
+                </div>
+
+                <div class="chat-item">
+                    <div class="chat-avatar work">T</div>
+                    <div class="chat-info">
+                        <div class="chat-name">Timesheet Bulanan BIT ...</div>
+                        <div class="chat-preview">Ladina: halo mentemen, ti...</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">Jun 3</div>
+                        <div class="unread-count">1</div>
+                    </div>
+                </div>
+
+                <div class="chat-item">
+                    <div class="chat-avatar">A</div>
+                    <div class="chat-info">
+                        <div class="chat-name">Andrean F. Wahyudi</div>
+                        <div class="chat-preview">typing...</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">Jun 3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="chat-area">
+            <div class="chat-header">
+                <div class="header-avatar">AN</div>
+                <div class="header-info">
+                    <div class="header-name">Agung Nugraha</div>
+                    <div class="header-status">last seen recently</div>
+                </div>
+                <div class="header-actions">
+                    <button class="action-btn">🔍</button>
+                    <button class="action-btn">📞</button>
+                    <button class="action-btn">⋮</button>
+                </div>
+            </div>
+
+            <div class="messages-container" id="messagesContainer">
+                <div class="message-group">
+                    <div class="message">
+                        <div class="message-bubble incoming">
+                            <div class="message-text">Haris</div>
+                            <div class="message-time">19:14</div>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="message-bubble incoming">
+                            <div class="message-text">Tmyta shelf bisa banyak dan gaada batesan gung pas urg baca teh</div>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="message-bubble incoming">
+                            <div class="message-text">Terus alesannya gmna tah mneh ngejelasinnya</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-group">
+                    <div class="message own">
+                        <div class="message-bubble outgoing">
+                            <div class="message-text">Aing mah tara alesan gung jelema na</div>
+                            <div class="message-time">19:20 ✓✓</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-group">
+                    <div class="message">
+                        <div class="message-bubble incoming">
+                            <div class="message-text">Babi</div>
+                            <div class="message-time">19:23</div>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="message-bubble incoming">
+                            <div class="message-text">Mksudnya ngejelasinnya gmna sia</div>
+                            <div class="message-time">19:23</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-group">
+                    <div class="message own">
+                        <div class="message-bubble outgoing">
+                            <div class="message-text">Lah ngamuk kan bener kwwk</div>
+                            <div class="message-time">19:35 ✓✓</div>
+                        </div>
+                    </div>
+                    <div class="message own">
+                        <div class="message-bubble outgoing">
+                            <div class="message-text">Ngejelasin sprti biasanya ngejelasin gung</div>
+                            <div class="message-time">19:35 ✓✓</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-group">
+                    <div class="message">
+                        <div class="message-bubble incoming">
+                            <div class="message-text">Gmna mneh blg nya</div>
+                            <div class="message-time">19:39</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-group">
+                    <div class="message own">
+                        <div class="message-bubble outgoing">
+                            <div class="message-text">Gmna atuh bingung</div>
+                            <div class="message-time">20:21 ✓✓</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unread-label">Unread Messages</div>
+
+                <div class="message-group">
+                    <div class="message">
+                        <div class="message-bubble incoming">
+                            <div class="message-text">Hmmm</div>
+                            <div class="message-time">20:28</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <button class="emoji-btn">😊</button>
+                <textarea class="message-input" placeholder="Message" rows="1" id="messageInput"></textarea>
+                <button class="attach-btn">📎</button>
+                <button class="voice-btn" id="voiceBtn">🎤</button>
+                <button class="send-btn" id="sendBtn" style="display: none;">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const messageInput = document.getElementById('messageInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const voiceBtn = document.getElementById('voiceBtn');
+        const messagesContainer = document.getElementById('messagesContainer');
+
+        // Auto-resize textarea
+        messageInput.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+            
+            // Toggle send/voice button
+            if (this.value.trim()) {
+                sendBtn.style.display = 'flex';
+                voiceBtn.style.display = 'none';
+            } else {
+                sendBtn.style.display = 'none';
+                voiceBtn.style.display = 'block';
+            }
+        });
+
+        // Smart response system
+        const responsePatterns = {
+            greetings: {
+                keywords: ['halo', 'hai', 'hi', 'hello', 'selamat', 'pagi', 'siang', 'sore', 'malam'],
+                responses: [
+                    'Halo juga! Gimana kabarnya?',
+                    'Hai, apa kabar?',
+                    'Hello! Ada yang bisa dibantu?',
+                    'Halo, gimana hari ini?'
+                ]
+            },
+            questions: {
+                keywords: ['apa', 'siapa', 'dimana', 'kapan', 'kenapa', 'bagaimana', 'gimana', 'berapa'],
+                responses: [
+                    'Hmm, itu pertanyaan yang bagus',
+                    'Coba gue pikirin dulu ya',
+                    'Wah, susah juga nih',
+                    'Gue kurang tau juga tuh',
+                    'Mungkin bisa dicari di google?'
+                ]
+            },
+            agreement: {
+                keywords: ['iya', 'ya', 'betul', 'benar', 'setuju', 'ok', 'oke', 'baik'],
+                responses: [
+                    'Iya kan!',
+                    'Betul banget',
+                    'Siap deh',
+                    'Oke, paham',
+                    'Ya udah gitu aja'
+                ]
+            },
+            confusion: {
+                keywords: ['bingung', 'ga tau', 'tidak tau', 'gmn', 'gimana', 'susah', 'ribet'],
+                responses: [
+                    'Sama, gue juga bingung',
+                    'Wah gimana tuh',
+                    'Susah ya emang',
+                    'Ribet banget dah',
+                    'Pusing mikirin nya'
+                ]
+            },
+            work: {
+                keywords: ['kerja', 'tugas', 'project', 'deadline', 'meeting', 'laporan', 'presentasi'],
+                responses: [
+                    'Wah kerjaan lagi nih',
+                    'Semangat kerja!',
+                    'Deadline kapan tuh?',
+                    'Jangan lupa istirahat ya',
+                    'Good luck buat projectnya!'
+                ]
+            },
+            food: {
+                keywords: ['makan', 'lapar', 'kenyang', 'enak', 'makanan', 'nasi', 'ayam', 'sate'],
+                responses: [
+                    'Wah jadi lapar nih',
+                    'Enak tuh kayaknya',
+                    'Gue juga mau dong',
+                    'Dimana belinya?',
+                    'Ajak-ajak dong kalau makan'
+                ]
+            },
+            emotions: {
+                keywords: ['sedih', 'senang', 'marah', 'kesel', 'happy', 'bete', 'stress'],
+                responses: [
+                    'Gue ngerti perasaan lu',
+                    'Semoga cepet membaik ya',
+                    'Sabar aja deh',
+                    'Tetap semangat!',
+                    'Jangan terlalu dipikirin'
+                ]
+            },
+            casual: {
+                keywords: ['wkwk', 'haha', 'lol', 'anjir', 'sih', 'banget', 'abis', 'tapi'],
+                responses: [
+                    'Wkwkwk iya sih',
+                    'Bener banget tuh',
+                    'Anjir parah',
+                    'Iya sih emang',
+                    'Banget dah',
+                    'Parah lu 😂'
+                ]
+            },
+            default: [
+                'Oke deh',
+                'Hmm gitu ya',
+                'Iya sih',
+                'Bener juga',
+                'Oh gitu',
+                'Paham',
+                'Sip deh',
+                'Oke banget',
+                'Ya udah',
+                'Gitu aja'
+            ]
+        };
+
+        function getSmartResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            // Check each pattern
+            for (const [category, data] of Object.entries(responsePatterns)) {
+                if (category === 'default') continue;
+                
+                const hasKeyword = data.keywords.some(keyword => 
+                    message.includes(keyword.toLowerCase())
+                );
+                
+                if (hasKeyword) {
+                    return data.responses[Math.floor(Math.random() * data.responses.length)];
+                }
+            }
+            
+            // Return default response if no pattern matches
+            return responsePatterns.default[Math.floor(Math.random() * responsePatterns.default.length)];
+        }
+
+        // Send message function
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (!message) return;
+
+            // Create message element
+            const messageGroup = document.createElement('div');
+            messageGroup.className = 'message-group';
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message own';
+            
+            const messageBubble = document.createElement('div');
+            messageBubble.className = 'message-bubble outgoing';
+            
+            const messageText = document.createElement('div');
+            messageText.className = 'message-text';
+            messageText.textContent = message;
+            
+            const messageTime = document.createElement('div');
+            messageTime.className = 'message-time';
+            const now = new Date();
+            const time = now.getHours().toString().padStart(2, '0') + ':' + 
+                        now.getMinutes().toString().padStart(2, '0');
+            messageTime.textContent = time + ' ✓✓';
+            
+            messageBubble.appendChild(messageText);
+            messageBubble.appendChild(messageTime);
+            messageDiv.appendChild(messageBubble);
+            messageGroup.appendChild(messageDiv);
+            
+            // Add to messages container
+            messagesContainer.appendChild(messageGroup);
+            
+            // Clear input
+            messageInput.value = '';
+            messageInput.style.height = 'auto';
+            sendBtn.style.display = 'none';
+            voiceBtn.style.display = 'block';
+            
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            // Simulate response after delay
+            setTimeout(() => {
+                const responseGroup = document.createElement('div');
+                responseGroup.className = 'message-group';
+                
+                const responseDiv = document.createElement('div');
+                responseDiv.className = 'message';
+                
+                const responseBubble = document.createElement('div');
+                responseBubble.className = 'message-bubble incoming';
+                
+                const responseText = document.createElement('div');
+                responseText.className = 'message-text';
+                responseText.textContent = getSmartResponse(message);
+                
+                const responseTime = document.createElement('div');
+                responseTime.className = 'message-time';
+                const responseNow = new Date();
+                const responseTimeStr = responseNow.getHours().toString().padStart(2, '0') + ':' + 
+                                      responseNow.getMinutes().toString().padStart(2, '0');
+                responseTime.textContent = responseTimeStr;
+                
+                responseBubble.appendChild(responseText);
+                responseBubble.appendChild(responseTime);
+                responseDiv.appendChild(responseBubble);
+                responseGroup.appendChild(responseDiv);
+                
+                messagesContainer.appendChild(responseGroup);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 1000 + Math.random() * 2000);
+        }
+
+        // Send on Enter key
+        messageInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        // Send button click
+        sendBtn.addEventListener('click', sendMessage);
+
+        // Chat item clicks
+        document.querySelectorAll('.chat-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.chat-item.active')?.classList.remove('active');
+                this.classList.add('active');
+                
+                // Update header info based on selected chat
+                const name = this.querySelector('.chat-name').textContent.trim();
+                const avatar = this.querySelector('.chat-avatar').textContent;
+                
+                document.querySelector('.header-name').textContent = name;
+                document.querySelector('.header-avatar').textContent = avatar;
+            });
+        });
+
+        // Auto-scroll to bottom on load
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    </script>
+</body>
+</html>
